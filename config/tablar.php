@@ -42,7 +42,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'assets/tablar-logo.png',
+            'path' => 'assets/secu_logo.jpg',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -50,6 +50,17 @@ return [
         ],
     ],
 
+    'sep_logo' => [
+        'enabled' => false,
+        'img' => [
+            'path' => 'assets/logosep.png',
+            'alt' => 'sep Logo',
+            'class' => '',
+            'width' => 50,
+            'height' => 50,
+        ],
+    ],
+    
     /*
      *
      * Default path is 'resources/views/vendor/tablar' as null. Set your custom path here If you need.
@@ -67,7 +78,7 @@ return [
     |
     */
 
-    'layout' => 'horizontal',
+    'layout' => 'combo',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
     'layout_light_sidebar' => null,
@@ -147,27 +158,39 @@ return [
         [
             'text' => 'Home',
             'icon' => 'ti ti-home',
-            'url' => 'home'
+            'url' => '/home'
         ],
+       
 
         [
-            'text' => 'Support 1',
-            'url' => '#',
-            'icon' => 'ti ti-help',
+            'text' => 'Tutores',
+            'url' => 'support',
+            'icon' => 'ti ti-shield',
             'active' => ['support1'],
             'submenu' => [
                 [
-                    'text' => 'Ticket',
-                    'url' => 'support1',
-                    'icon' => 'ti ti-article',
+                    'text' => 'Primer grado',
+                    'icon' => 'ti ti-user',
+                    'url' => 'alumnos-grado1s'
+                ],
+                [
+                    'text' => 'Segundo grado',
+                    'icon' => 'ti ti-user',
+                    'url' => 'alumnos-grado2s'
+                ],
+                [
+                    'text' => 'Tercer grado',
+                    'icon' => 'ti ti-user',
+                    'url' => 'alumnos-grado3s'
                 ]
+                
             ],
         ],
 
         [
-            'text' => 'Support 2',
+            'text' => 'Tipos de apredizaje',
             'url' => '#',
-            'icon' => 'ti ti-help',
+            'icon' => 'ti ti-star',
             'active' => ['support2'],
             'submenu' => [
                 [
