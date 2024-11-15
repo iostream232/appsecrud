@@ -50,8 +50,8 @@
                         <div class="card-body">
                             
 <div class="form-group">
-<strong>Alumno Id:</strong>
-{{ $tiposAprendizaje1->alumno_id }}
+<strong>Nombre:</strong>
+{{ $tiposAprendizaje1->nombre }}
 </div>
 <div class="form-group">
 <strong>Estilo:</strong>

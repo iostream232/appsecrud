@@ -85,7 +85,7 @@
                                         </svg>
                                     </th>
                                     
-										<th>Alumno Id</th>
+										<th>Nombre</th>
 										<th>Estilo</th>
 										<th>Ritmo</th>
 
@@ -100,7 +100,7 @@
                                                    aria-label="Select tiposAprendizaje1"></td>
                                         <td>{{ ++$i }}</td>
                                         
-											<td>{{ $tiposAprendizaje1->alumno_id }}</td>
+											<td>{{ $tiposAprendizaje1->nombre }}</td>
 											<td>{{ $tiposAprendizaje1->estilo }}</td>
 											<td>{{ $tiposAprendizaje1->ritmo }}</td>
 

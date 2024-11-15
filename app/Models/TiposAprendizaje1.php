@@ -8,21 +8,21 @@ use Illuminate\Database\Eloquent\Model;
  * Class TiposAprendizaje1
  *
  * @property $id
- * @property $alumno_id
+ * @property $nombre
  * @property $estilo
  * @property $ritmo
  * @property $created_at
  * @property $updated_at
  *
- * @property AlumnosGrado1 $alumnosGrado1
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class TiposAprendizaje1 extends Model
 {
   protected $table = 'tipos_aprendizaje_1';
+
     static $rules = [
-		'alumno_id' => 'required',
+		'nombre' => 'required',
 		'estilo' => 'required',
 		'ritmo' => 'required',
     ];
@@ -34,16 +34,8 @@ class TiposAprendizaje1 extends Model
      *
      * @var array
      */
-    protected $fillable = ['alumno_id','estilo','ritmo'];
+    protected $fillable = ['nombre','estilo','ritmo'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function alumnosGrado1()
-    {
-        return $this->hasOne('App\Models\AlumnosGrado1', 'id', 'alumno_id');
-    }
-    
 
 }
