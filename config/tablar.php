@@ -165,7 +165,7 @@ return [
         [
             'text' => 'Tutores',
             'url' => 'support',
-            'icon' => 'ti ti-shield',
+            'icon' => 'ti ti-address-book',
             'active' => ['support1'],
             'submenu' => [
                 [
@@ -190,21 +190,21 @@ return [
         [
             'text' => 'Tipos de apredizaje',
             'url' => '#',
-            'icon' => 'ti ti-star',
+            'icon' => 'ti ti-brain',
             'active' => ['support2'],
             'submenu' => [
                 [
-                    'text' => 'Ticket',
-                    'url' => 'support2',
-                    'icon' => 'ti ti-article',
+                    'text' => 'Tipos de aprendisaje 1 A',
+                    'icon' => 'ti ti-user',
+                    'url' => 'tipos-aprendizaje1s'
                 ]
             ],
         ],
 
         [
-            'text' => 'Support 3',
+            'text' => 'Usuarios',
             'url' => '#',
-            'icon' => 'ti ti-help',
+            'icon' => 'ti ti-users',
             'active' => ['support3'],
             'submenu' => [
                 [
