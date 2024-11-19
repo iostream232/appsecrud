@@ -16,7 +16,10 @@ return new class extends Migration
             $table->string('nombre'); // Campo para el nombre del alumno
             $table->enum('estilo', ['visual', 'auditivo', 'kinestesico']); // Opciones para el estilo de aprendizaje
             $table->enum('ritmo', ['rapido', 'moderado', 'lento']); // Opciones para el ritmo de aprendizaje
+            $table->unsignedBigInteger('alumno_id'); // Relación con el alumno
+            $table->foreign('alumno_id')->references('id')->on('alumnos_grado_1')->onDelete('cascade');
             $table->timestamps();
+        
         });
     }
 

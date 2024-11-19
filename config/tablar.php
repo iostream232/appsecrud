@@ -195,8 +195,18 @@ return [
             'submenu' => [
                 [
                     'text' => 'Tipos de aprendisaje 1 A',
-                    'icon' => 'ti ti-user',
+                    'icon' => 'ti ti-school',
                     'url' => 'tipos-aprendizaje1s'
+                ],
+                [
+                    'text' => 'Segundo grado',
+                    'icon' => 'ti ti-school',
+                    'url' => 'tipos-aprendizaje2s'
+                ],
+                [
+                    'text' => 'Tercer grado',
+                    'icon' => 'ti ti-school',
+                    'url' => 'tipos-aprendizaje3s'
                 ]
             ],
         ],
