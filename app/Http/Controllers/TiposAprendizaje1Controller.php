@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TiposAprendizaje1;
 use Illuminate\Http\Request;
+use App\Models\AlumnosGrado1;  // Asegúrate de que esta línea esté presente
 
 /**
  * Class TiposAprendizaje1Controller
@@ -30,10 +31,17 @@ class TiposAprendizaje1Controller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        $tiposAprendizaje1 = new TiposAprendizaje1();
-        return view('tipos-aprendizaje1.create', compact('tiposAprendizaje1'));
-    }
+{
+    // Obtén solo los alumnos que no han sido registrados en la tabla tipos_aprendizaje_1
+    $alumnos = AlumnosGrado1::whereNotIn('id', TiposAprendizaje1::pluck('alumno_id'))->pluck('nombre_alumno', 'id');
+
+    // Crea una instancia vacía de TiposAprendizaje1
+    $tiposAprendizaje1 = new TiposAprendizaje1();
+    
+    return view('tipos-aprendizaje1.create', compact('tiposAprendizaje1', 'alumnos'));
+}
+
+    
 
     /**
      * Store a newly created resource in storage.
@@ -42,14 +50,37 @@ class TiposAprendizaje1Controller extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        request()->validate(TiposAprendizaje1::$rules);
+{
+    // Validación de los campos
+    request()->validate([
+        'alumno_id' => 'required|exists:alumnos_grado_1,id',
+        'estilo' => 'required|in:visual,auditivo,kinestesico',
+        'ritmo' => 'required|in:rapido,moderado,lento',
+    ]);
 
-        $tiposAprendizaje1 = TiposAprendizaje1::create($request->all());
+    // Obtener el nombre del alumno utilizando el alumno_id enviado
+    $alumno = AlumnosGrado1::find($request->alumno_id); // Busca el alumno por el ID
 
-        return redirect()->route('tipos-aprendizaje1s.index')
-            ->with('success', 'TiposAprendizaje1 created successfully.');
+    // Verificar que el alumno exista
+    if (!$alumno) {
+        return redirect()->back()->with('error', 'Alumno no encontrado');
     }
+
+    // Crear el registro en la tabla TiposAprendizaje1
+    TiposAprendizaje1::create([
+        'alumno_id' => $request->alumno_id,
+        'nombre' => $alumno->nombre_alumno,  // Obtén el nombre del alumno desde la base de datos
+        'estilo' => $request->estilo,
+        'ritmo' => $request->ritmo,
+    ]);
+
+    // Redirigir con éxito
+    return redirect()->route('tipos-aprendizaje1s.index')
+        ->with('success', 'Tipo de Aprendizaje creado exitosamente');
+}
+
+
+    
 
     /**
      * Display the specified resource.

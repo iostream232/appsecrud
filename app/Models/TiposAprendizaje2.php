@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class TiposAprendizaje3
+ * Class TiposAprendizaje2
  *
  * @property $id
  * @property $nombre
@@ -15,13 +15,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
- * @property AlumnosGrado3 $alumnosGrado3
+ * @property AlumnosGrado2 $alumnosGrado2
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class TiposAprendizaje3 extends Model
+class TiposAprendizaje2 extends Model
 {
-  protected $table = 'tipos_aprendizaje_3';
+  protected $table = 'tipos_aprendizaje_2';
+    
     static $rules = [
 		'nombre' => 'required',
 		'estilo' => 'required',
@@ -29,7 +30,7 @@ class TiposAprendizaje3 extends Model
 		'alumno_id' => 'required',
     ];
 
-    protected $perPage = 20;  
+    protected $perPage = 20;
 
     /**
      * Attributes that should be mass-assignable.
@@ -42,9 +43,9 @@ class TiposAprendizaje3 extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function alumnosGrado3()
+    public function alumnosGrado2()
     {
-        return $this->hasOne('App\Models\AlumnosGrado3', 'id', 'alumno_id');
+        return $this->hasOne('App\Models\AlumnosGrado2', 'id', 'alumno_id');
     }
     
 

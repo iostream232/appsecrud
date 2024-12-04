@@ -14,6 +14,8 @@ Route::resource('/alumnos-grado1s', App\Http\Controllers\AlumnosGrado1Controller
 
 Route::resource('/alumnos-grado2s', App\Http\Controllers\AlumnosGrado2Controller::class);
 Route::resource('/alumnos-grado3s', App\Http\Controllers\AlumnosGrado3Controller::class);
+
 //Route::resource('/tipos-aprendizaje1s', App\Http\Controllers\TiposAprendizaje1Controller::class);
 Route::resource('/tipos-aprendizaje1s', App\Http\Controllers\TiposAprendizaje1Controller::class);
 Route::resource('/tipos-aprendizaje3s', App\Http\Controllers\TiposAprendizaje3Controller::class);
+Route::resource('/tipos-aprendizaje2s', App\Http\Controllers\TiposAprendizaje2Controller::class);

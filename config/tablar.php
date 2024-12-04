@@ -11,7 +11,7 @@ return [
     */
 
     'title' => 'Tablar',
-    'title_prefix' => '',
+    'title_prefix' => 'Panel de administracion',
     'title_postfix' => '',
     'bottom_title' => 'Tablar',
     'current_version' => 'v4.8',
@@ -156,7 +156,7 @@ return [
     'menu' => [
         // Navbar items:
         [
-            'text' => 'Home',
+            'text' => 'Inicio',
             'icon' => 'ti ti-home',
             'url' => '/home'
         ],
