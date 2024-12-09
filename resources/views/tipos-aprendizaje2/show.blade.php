@@ -13,7 +13,7 @@
                         View
                     </div>
                     <h2 class="page-title">
-                        {{ __('Tipos Aprendizaje2 ') }}
+                        {{ __('Tipos Aprendizaje 2° ') }}
                     </h2>
                 </div>
                 <!-- Page title actions -->
@@ -28,7 +28,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Tipos Aprendizaje2 List
+                         Lista de alumnos
                         </a>
                     </div>
                 </div>

@@ -78,12 +78,12 @@ return [
     |
     */
 
-    'layout' => 'combo',
+    'layout' => 'Vertical',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
-    'layout_light_sidebar' => null,
-    'layout_light_topbar' => true,
-    'layout_enable_top_header' => false,
+    'layout_light_sidebar' => false,
+    'layout_light_topbar' => false,
+    'layout_enable_top_header' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -211,19 +211,7 @@ return [
             ],
         ],
 
-        [
-            'text' => 'Usuarios',
-            'url' => '#',
-            'icon' => 'ti ti-users',
-            'active' => ['support3'],
-            'submenu' => [
-                [
-                    'text' => 'Ticket',
-                    'url' => 'support3',
-                    'icon' => 'ti ti-article',
-                ]
-            ],
-        ],
+        
 
     ],
 

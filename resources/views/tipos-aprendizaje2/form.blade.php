@@ -1,46 +1,52 @@
-
 <div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('nombre') }}</label>
+    <label class="form-label">{{ Form::label('alumno_id', 'Alumno') }}</label>
     <div>
-        {{ Form::text('nombre', $tiposAprendizaje2->nombre, ['class' => 'form-control' .
-        ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
-        {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">tiposAprendizaje2 <b>nombre</b> instruction.</small>
-    </div>
-</div>
-<div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('estilo') }}</label>
-    <div>
-        {{ Form::text('estilo', $tiposAprendizaje2->estilo, ['class' => 'form-control' .
-        ($errors->has('estilo') ? ' is-invalid' : ''), 'placeholder' => 'Estilo']) }}
-        {!! $errors->first('estilo', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">tiposAprendizaje2 <b>estilo</b> instruction.</small>
-    </div>
-</div>
-<div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('ritmo') }}</label>
-    <div>
-        {{ Form::text('ritmo', $tiposAprendizaje2->ritmo, ['class' => 'form-control' .
-        ($errors->has('ritmo') ? ' is-invalid' : ''), 'placeholder' => 'Ritmo']) }}
-        {!! $errors->first('ritmo', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">tiposAprendizaje2 <b>ritmo</b> instruction.</small>
-    </div>
-</div>
-<div class="form-group mb-3">
-    <label class="form-label">   {{ Form::label('alumno_id') }}</label>
-    <div>
-        {{ Form::text('alumno_id', $tiposAprendizaje2->alumno_id, ['class' => 'form-control' .
-        ($errors->has('alumno_id') ? ' is-invalid' : ''), 'placeholder' => 'Alumno Id']) }}
+        {{ Form::select('alumno_id', $alumnos, $tiposAprendizaje2->alumno_id ?? null, [
+            'class' => 'form-control' . ($errors->has('alumno_id') ? ' is-invalid' : ''),
+            'placeholder' => 'Seleccione un alumno'
+        ]) }}
         {!! $errors->first('alumno_id', '<div class="invalid-feedback">:message</div>') !!}
-        <small class="form-hint">tiposAprendizaje2 <b>alumno_id</b> instruction.</small>
+        <small class="form-hint">Seleccione el <b>nombre</b> del alumno.</small>
     </div>
 </div>
 
-    <div class="form-footer">
-        <div class="text-end">
-            <div class="d-flex">
-                <a href="#" class="btn btn-danger">Cancel</a>
-                <button type="submit" class="btn btn-primary ms-auto ajax-submit">Submit</button>
-            </div>
+<div class="form-group mb-3">
+    <label class="form-label">{{ Form::label('estilo', 'Estilo de Aprendizaje') }}</label>
+    <div>
+        {{ Form::select('estilo', 
+            ['visual' => 'Visual', 'auditivo' => 'Auditivo', 'kinestesico' => 'Kinestésico'], 
+            $tiposAprendizaje2->estilo ?? null, 
+            [
+                'class' => 'form-control' . ($errors->has('estilo') ? ' is-invalid' : ''),
+                'placeholder' => 'Seleccione un estilo'
+            ]
+        ) }}
+        {!! $errors->first('estilo', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">Seleccione el <b>estilo</b> de aprendizaje.</small>
+    </div>
+</div>
+
+<div class="form-group mb-3">
+    <label class="form-label">{{ Form::label('ritmo', 'Ritmo de Aprendizaje') }}</label>
+    <div>
+        {{ Form::select('ritmo', 
+            ['rapido' => 'Rápido', 'moderado' => 'Moderado', 'lento' => 'Lento'], 
+            $tiposAprendizaje2->ritmo ?? null, 
+            [
+                'class' => 'form-control' . ($errors->has('ritmo') ? ' is-invalid' : ''),
+                'placeholder' => 'Seleccione un ritmo'
+            ]
+        ) }}
+        {!! $errors->first('ritmo', '<div class="invalid-feedback">:message</div>') !!}
+        <small class="form-hint">Seleccione el <b>ritmo</b> de aprendizaje.</small>
+    </div>
+</div>
+
+<div class="form-footer">
+    <div class="text-end">
+        <div class="d-flex">
+            <a href="{{ route('tipos-aprendizaje2s.index') }}" class="btn btn-danger">Cancelar</a>
+            <button type="submit" class="btn btn-primary ms-auto ajax-submit">Guardar</button>
         </div>
     </div>
+</div>

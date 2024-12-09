@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\TiposAprendizaje2;
 use Illuminate\Http\Request;
+use App\Models\AlumnosGrado2; // Relación con alumnos del segundo grado
 
 /**
  * Class TiposAprendizaje2Controller
@@ -12,7 +13,7 @@ use Illuminate\Http\Request;
 class TiposAprendizaje2Controller extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Muestra una lista de los recursos.
      *
      * @return \Illuminate\Http\Response
      */
@@ -25,60 +26,82 @@ class TiposAprendizaje2Controller extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Muestra el formulario para crear un nuevo recurso.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
+        // Obtiene los alumnos no registrados en la tabla de tipos de aprendizaje
+        $alumnos = AlumnosGrado2::whereNotIn('id', TiposAprendizaje2::pluck('alumno_id'))->pluck('nombre_alumno', 'id');
+        
         $tiposAprendizaje2 = new TiposAprendizaje2();
-        return view('tipos-aprendizaje2.create', compact('tiposAprendizaje2'));
+        return view('tipos-aprendizaje2.create', compact('tiposAprendizaje2', 'alumnos'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Almacena un nuevo recurso en la base de datos.
      *
      * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        request()->validate(TiposAprendizaje2::$rules);
+        // Validación de los datos
+        $request->validate([
+            'alumno_id' => 'required|exists:alumnos_grado_2,id',
+            'estilo' => 'required|in:visual,auditivo,kinestesico',
+            'ritmo' => 'required|in:rapido,moderado,lento',
+        ]);
 
-        $tiposAprendizaje2 = TiposAprendizaje2::create($request->all());
+        // Verificar que el alumno no tenga un registro existente
+        if (TiposAprendizaje2::where('alumno_id', $request->alumno_id)->exists()) {
+            return redirect()->back()->with('error', 'El alumno ya tiene un tipo de aprendizaje registrado.');
+        }
+
+        // Obtener el nombre del alumno
+        $alumno = AlumnosGrado2::find($request->alumno_id);
+
+        // Crear el registro
+        TiposAprendizaje2::create([
+            'alumno_id' => $request->alumno_id,
+            'nombre' => $alumno->nombre_alumno,
+            'estilo' => $request->estilo,
+            'ritmo' => $request->ritmo,
+        ]);
 
         return redirect()->route('tipos-aprendizaje2s.index')
-            ->with('success', 'TiposAprendizaje2 created successfully.');
+            ->with('success', 'Tipo de aprendizaje creado exitosamente.');
     }
 
     /**
-     * Display the specified resource.
+     * Muestra un recurso específico.
      *
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $tiposAprendizaje2 = TiposAprendizaje2::find($id);
+        $tiposAprendizaje2 = TiposAprendizaje2::findOrFail($id);
 
         return view('tipos-aprendizaje2.show', compact('tiposAprendizaje2'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Muestra el formulario para editar un recurso específico.
      *
      * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $tiposAprendizaje2 = TiposAprendizaje2::find($id);
+        $tiposAprendizaje2 = TiposAprendizaje2::findOrFail($id);
 
         return view('tipos-aprendizaje2.edit', compact('tiposAprendizaje2'));
     }
 
     /**
-     * Update the specified resource in storage.
+     * Actualiza un recurso en la base de datos.
      *
      * @param  \Illuminate\Http\Request $request
      * @param  TiposAprendizaje2 $tiposAprendizaje2
@@ -86,24 +109,30 @@ class TiposAprendizaje2Controller extends Controller
      */
     public function update(Request $request, TiposAprendizaje2 $tiposAprendizaje2)
     {
-        request()->validate(TiposAprendizaje2::$rules);
+        // Validación de los datos
+        $request->validate([
+            'estilo' => 'required|in:visual,auditivo,kinestesico',
+            'ritmo' => 'required|in:rapido,moderado,lento',
+        ]);
 
         $tiposAprendizaje2->update($request->all());
 
         return redirect()->route('tipos-aprendizaje2s.index')
-            ->with('success', 'TiposAprendizaje2 updated successfully');
+            ->with('success', 'Tipo de aprendizaje actualizado exitosamente.');
     }
 
     /**
-     * @param int $id
+     * Elimina un recurso de la base de datos.
+     *
+     * @param  int $id
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Exception
      */
     public function destroy($id)
     {
-        $tiposAprendizaje2 = TiposAprendizaje2::find($id)->delete();
+        TiposAprendizaje2::findOrFail($id)->delete();
 
         return redirect()->route('tipos-aprendizaje2s.index')
-            ->with('success', 'TiposAprendizaje2 deleted successfully');
+            ->with('success', 'Tipo de aprendizaje eliminado exitosamente.');
     }
 }

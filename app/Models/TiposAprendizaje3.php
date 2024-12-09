@@ -15,37 +15,30 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
- * @property AlumnosGrado3 $alumnosGrado3
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class TiposAprendizaje3 extends Model
 {
-  protected $table = 'tipos_aprendizaje_3';
+    protected $table = 'tipos_aprendizaje_3';
+
+    // Reglas de validación
     static $rules = [
-		'nombre' => 'required',
-		'estilo' => 'required',
-		'ritmo' => 'required',
-		'alumno_id' => 'required',
+        'nombre' => 'required',
+        'estilo' => 'required',
+        'ritmo' => 'required',
     ];
 
-    protected $perPage = 20;  
+    protected $perPage = 20;
+
+    // Atributos que deben ser asignados en masa
+    protected $fillable = ['nombre', 'estilo', 'ritmo', 'alumno_id'];
 
     /**
-     * Attributes that should be mass-assignable.
-     *
-     * @var array
-     */
-    protected $fillable = ['nombre','estilo','ritmo','alumno_id'];
-
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * Relación con el modelo AlumnosGrado3
      */
     public function alumnosGrado3()
     {
         return $this->hasOne('App\Models\AlumnosGrado3', 'id', 'alumno_id');
     }
-    
-
 }

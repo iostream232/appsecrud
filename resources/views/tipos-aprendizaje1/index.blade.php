@@ -12,11 +12,9 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                       Lista
+                       Lista de alumnos
                     </div>
-                    <h2 class="page-title">
-                        {{ __('Alumnos ') }}
-                    </h2>
+                   
                 </div>
                 <!-- Page title actions -->
                 <div class="col-12 col-md-auto ms-auto d-print-none">
@@ -47,7 +45,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tipos Aprendizaje 1A</h3>
+                            <h3 class="card-title">Tipos Aprendizaje 1°</h3>
                         </div>
                         <div class="card-body border-bottom py-3">
                             <div class="d-flex">

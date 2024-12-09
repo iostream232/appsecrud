@@ -15,19 +15,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property $created_at
  * @property $updated_at
  *
- * @property AlumnosGrado2 $alumnosGrado2
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
 class TiposAprendizaje2 extends Model
 {
-  protected $table = 'tipos_aprendizaje_2';
-    
+    protected $table = 'tipos_aprendizaje_2';
+
     static $rules = [
-		'nombre' => 'required',
-		'estilo' => 'required',
-		'ritmo' => 'required',
-		'alumno_id' => 'required',
+        'nombre' => 'required',
+        'estilo' => 'required',
+        'ritmo' => 'required',
     ];
 
     protected $perPage = 20;
@@ -37,8 +35,7 @@ class TiposAprendizaje2 extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre','estilo','ritmo','alumno_id'];
-
+    protected $fillable = ['nombre', 'estilo', 'ritmo', 'alumno_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
@@ -47,6 +44,4 @@ class TiposAprendizaje2 extends Model
     {
         return $this->hasOne('App\Models\AlumnosGrado2', 'id', 'alumno_id');
     }
-    
-
 }
