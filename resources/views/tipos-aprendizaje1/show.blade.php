@@ -10,7 +10,7 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        View
+                        Ver
                     </div>
                     <h2 class="page-title">
                         {{ __('Tipos Aprendizaje1 ') }}
@@ -45,7 +45,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tipos Aprendizaje1 Details</h3>
+                            <h3 class="card-title">Tipos Aprendizaje1 Detalles</h3>
                         </div>
                         <div class="card-body">
                             

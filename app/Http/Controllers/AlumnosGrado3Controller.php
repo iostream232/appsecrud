@@ -104,6 +104,6 @@ class AlumnosGrado3Controller extends Controller
         $alumnosGrado3 = AlumnosGrado3::find($id)->delete();
 
         return redirect()->route('alumnos-grado3s.index')
-            ->with('success', 'AlumnosGrado3 deleted successfully');
+            ->with('success', 'Eliminado con éxito');
     }
 }

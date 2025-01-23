@@ -133,6 +133,6 @@ class TiposAprendizaje2Controller extends Controller
         TiposAprendizaje2::findOrFail($id)->delete();
 
         return redirect()->route('tipos-aprendizaje2s.index')
-            ->with('success', 'Tipo de aprendizaje eliminado exitosamente.');
+            ->with('success', 'Eliminado con éxito');
     }
 }

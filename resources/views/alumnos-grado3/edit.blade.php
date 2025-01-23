@@ -45,7 +45,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Alumnos Grado3 Details</h3>
+                            <h3 class="card-title">Datos del alumno</h3>
                         </div>
                         <div class="card-body">
                             <form method="POST"

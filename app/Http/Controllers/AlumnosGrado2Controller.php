@@ -104,6 +104,6 @@ class AlumnosGrado2Controller extends Controller
         $alumnosGrado2 = AlumnosGrado2::find($id)->delete();
 
         return redirect()->route('alumnos-grado2s.index')
-            ->with('success', 'AlumnosGrado2 deleted successfully');
+            ->with('success', 'Eliminado con éxito');
     }
 }

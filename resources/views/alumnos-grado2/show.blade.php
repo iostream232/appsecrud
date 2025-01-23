@@ -1,6 +1,6 @@
 @extends('tablar::page')
 
-@section('title', 'View Alumnos Grado2')
+@section('title', 'View Grupo B')
 
 @section('content')
     <!-- Page header -->
@@ -13,7 +13,7 @@
                         View
                     </div>
                     <h2 class="page-title">
-                        {{ __('Alumnos Grado2 ') }}
+                        {{ __('Grupo B ') }}
                     </h2>
                 </div>
                 <!-- Page title actions -->
@@ -28,7 +28,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Alumnos Grado2 List
+                            Grupo B List
                         </a>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Alumnos Grado2 Details</h3>
+                            <h3 class="card-title">Datos del alumno</h3>
                         </div>
                         <div class="card-body">
                             

@@ -60,7 +60,7 @@
                                     entries
                                 </div>
                                 <div class="ms-auto text-muted">
-                                    Search:
+                                    Buscar
                                     <div class="ms-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm"
                                                aria-label="Search invoice">
@@ -118,11 +118,11 @@
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('alumnos-grado3s.show',$alumnosGrado3->id) }}">
-                                                            View
+                                                            Ver
                                                         </a>
                                                         <a class="dropdown-item"
                                                            href="{{ route('alumnos-grado3s.edit',$alumnosGrado3->id) }}">
-                                                            Edit
+                                                            Editar
                                                         </a>
                                                         <form
                                                             action="{{ route('alumnos-grado3s.destroy',$alumnosGrado3->id) }}"
@@ -130,10 +130,10 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
+                                                                    onclick="if(!confirm('¿Quieres eliminar el registro?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
-                                                                Delete
+                                                               Eliminar
                                                             </button>
                                                         </form>
                                                     </div>
@@ -142,7 +142,7 @@
                                         </td>
                                     </tr>
                                 @empty
-                                    <td>No Data Found</td>
+                                    <td>No hay datos para mostrar</td>
                                 @endforelse
                                 </tbody>
 

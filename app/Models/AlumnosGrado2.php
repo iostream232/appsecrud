@@ -40,6 +40,11 @@ class AlumnosGrado2 extends Model
      */
     protected $fillable = ['nombre_alumno','nombre_tutor_1','telefono_tutor_1','nombre_tutor_2','telefono_tutor_2'];
 
+    use HasFactory;
 
+    public function maestro()
+    {
+        return $this->belongsTo(Maestro::class);
+    }
 
 }

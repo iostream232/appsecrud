@@ -62,7 +62,7 @@
 {{ $tiposAprendizaje3->ritmo }}
 </div>
 <div class="form-group">
-<strong>Alumno Id:</strong>
+<strong>ID:</strong>
 {{ $tiposAprendizaje3->alumno_id }}
 </div>
 

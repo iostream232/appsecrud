@@ -2,15 +2,15 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">New report</h5>
+                <h5 class="modal-title">Nuevo reporte</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
                 <div class="mb-3">
-                    <label class="form-label">Name</label>
+                    <label class="form-label">Nombre</label>
                     <input type="text" class="form-control" name="example-text-input" placeholder="Your report name">
                 </div>
-                <label class="form-label">Report type</label>
+                <label class="form-label">Tipo de reporte</label>
                 <div class="form-selectgroup-boxes row mb-3">
                     <div class="col-lg-6">
                         <label class="form-selectgroup-item">
@@ -34,7 +34,7 @@
                       <span class="form-selectgroup-check"></span>
                     </span>
                     <span class="form-selectgroup-label-content">
-                      <span class="form-selectgroup-title strong mb-1">Advanced</span>
+                      <span class="form-selectgroup-title strong mb-1">Avanzado</span>
                       <span class="d-block text-muted">Insert charts and additional advanced analyses to be inserted in the report</span>
                     </span>
                   </span>
@@ -100,7 +100,7 @@
                         <line x1="12" y1="5" x2="12" y2="19"/>
                         <line x1="5" y1="12" x2="19" y2="12"/>
                     </svg>
-                    Create new report
+                    Crear nuevo reporte
                 </a>
             </div>
         </div>

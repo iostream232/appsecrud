@@ -1,6 +1,6 @@
 @extends('tablar::page')
 
-@section('title', 'Update Alumnos Grado2')
+@section('title', 'Update Grupo B')
 
 @section('content')
     <!-- Page header -->
@@ -13,7 +13,7 @@
                         Update
                     </div>
                     <h2 class="page-title">
-                        {{ __('Alumnos Grado2 ') }}
+                        {{ __('Alumnos Grado 2 ') }}
                     </h2>
                 </div>
                 <!-- Page title actions -->
@@ -21,14 +21,8 @@
                     <div class="btn-list">
                         <a href="{{ route('alumnos-grado2s.index') }}" class="btn btn-primary d-none d-sm-inline-block">
                             <!-- Download SVG icon from http://tabler-icons.io/i/plus -->
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24"
-                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                                 stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                                <line x1="12" y1="5" x2="12" y2="19"/>
-                                <line x1="5" y1="12" x2="19" y2="12"/>
-                            </svg>
-                            Alumnos Grado2 List
+                            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l14 0" /><path d="M5 12l6 6" /><path d="M5 12l6 -6" /></svg>
+                            Regresar
                         </a>
                     </div>
                 </div>
@@ -45,7 +39,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Alumnos Grado2 Details</h3>
+                            <h3 class="card-title">Datos del alumno</h3>
                         </div>
                         <div class="card-body">
                             <form method="POST"

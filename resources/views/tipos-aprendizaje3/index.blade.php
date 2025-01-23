@@ -88,9 +88,10 @@
 										<th>Nombre</th>
 										<th>Estilo</th>
 										<th>Ritmo</th>
-                                        <th></th>
-										<th>Matricula</th>
-
+                                        
+                                        <!--
+										<th>ID</th>
+                                            -->
                                     <th class="w-1"></th>
                                 </tr>
                                 </thead>
@@ -116,24 +117,26 @@
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown">
-                                                        Acciones
+                                                        Opciones
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('tipos-aprendizaje3s.show',$tiposAprendizaje3->id) }}">
-                                                            Ver
+                                                            Ver informacion
                                                         </a>
+                                                            <!--
                                                         <a class="dropdown-item"
                                                            href="{{ route('tipos-aprendizaje3s.edit',$tiposAprendizaje3->id) }}">
                                                             Editar
                                                         </a>
+                                                        -->
                                                         <form
                                                             action="{{ route('tipos-aprendizaje3s.destroy',$tiposAprendizaje3->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
+                                                                    onclick="if(!confirm('¿Quieres eliminar el registro?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
                                                                 Eliminar

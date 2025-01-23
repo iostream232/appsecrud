@@ -135,6 +135,6 @@ class TiposAprendizaje1Controller extends Controller
         $tiposAprendizaje1 = TiposAprendizaje1::find($id)->delete();
 
         return redirect()->route('tipos-aprendizaje1s.index')
-            ->with('success', 'TiposAprendizaje1 deleted successfully');
+            ->with('success', 'Eliminado con éxito');
     }
 }

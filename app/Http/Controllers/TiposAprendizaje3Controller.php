@@ -141,6 +141,6 @@ class TiposAprendizaje3Controller extends Controller
 
         // Redirigir con mensaje de éxito
         return redirect()->route('tipos-aprendizaje3s.index')
-            ->with('success', 'Tipo de Aprendizaje eliminado exitosamente');
+            ->with('success', 'Eliminado con éxito');
     }
 }

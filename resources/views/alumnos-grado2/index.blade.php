@@ -1,7 +1,7 @@
 @extends('tablar::page')
 
 @section('title')
-    Alumnos Grado2
+    Grupo B
 @endsection
 
 @section('content')
@@ -12,10 +12,10 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        List
+                    Alumnos de segundo grado
                     </div>
                     <h2 class="page-title">
-                        {{ __('Alumnos Grado2 ') }}
+                        {{ __('Grupo B ') }}
                     </h2>
                 </div>
                 <!-- Page title actions -->
@@ -30,7 +30,7 @@
                                 <line x1="12" y1="5" x2="12" y2="19"/>
                                 <line x1="5" y1="12" x2="19" y2="12"/>
                             </svg>
-                            Create Alumnos Grado2
+                            Create Grupo B
                         </a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Alumnos Grado2</h3>
+                            <h3 class="card-title">Grupo B</h3>
                         </div>
                         <div class="card-body border-bottom py-3">
                             <div class="d-flex">
@@ -60,7 +60,7 @@
                                     entries
                                 </div>
                                 <div class="ms-auto text-muted">
-                                    Search:
+                                    Buscar
                                     <div class="ms-2 d-inline-block">
                                         <input type="text" class="form-control form-control-sm"
                                                aria-label="Search invoice">
@@ -118,11 +118,11 @@
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('alumnos-grado2s.show',$alumnosGrado2->id) }}">
-                                                            View
+                                                            Ver informacion
                                                         </a>
                                                         <a class="dropdown-item"
                                                            href="{{ route('alumnos-grado2s.edit',$alumnosGrado2->id) }}">
-                                                            Edit
+                                                            Editar
                                                         </a>
                                                         <form
                                                             action="{{ route('alumnos-grado2s.destroy',$alumnosGrado2->id) }}"
@@ -130,10 +130,10 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
+                                                                    onclick="if(!confirm('¿Quieres eliminar el registro?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
-                                                                Delete
+                                                                Eliminar
                                                             </button>
                                                         </form>
                                                     </div>
@@ -142,7 +142,7 @@
                                         </td>
                                     </tr>
                                 @empty
-                                    <td>No Data Found</td>
+                                    <td>No hay datos para mostrar</td>
                                 @endforelse
                                 </tbody>
 

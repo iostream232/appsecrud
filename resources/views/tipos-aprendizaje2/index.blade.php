@@ -81,8 +81,10 @@
 										<th>Nombre</th>
 										<th>Estilo</th>
 										<th>Ritmo</th>
-										<th>Alumno Id</th>
-
+                                        <!--
+                                        Activar para saber el Id en la base de datos
+										<th>ID</th>
+                                        -->
                                     <th class="w-1"></th>
                                 </tr>
                                 </thead>
@@ -107,12 +109,12 @@
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown">
-                                                        Actions
+                                                        Opciones
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('tipos-aprendizaje2s.show',$tiposAprendizaje2->id) }}">
-                                                            View
+                                                            Ver informacion
                                                         </a>
                                                        
                                                         <form
@@ -121,10 +123,10 @@
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
+                                                                    onclick="if(!confirm('¿Quieres eliminar el registro?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
-                                                                Delete
+                                                                Eliminar
                                                             </button>
                                                         </form>
                                                     </div>

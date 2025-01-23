@@ -49,7 +49,7 @@
         <div class="text-end">
             <div class="d-flex">
                 <a href="{{ route('alumnos-grado1s.index') }}" class="btn btn-danger">Cancelar</a>
-                <button type="submit" class="btn btn-primary ms-auto ajax-submit">Actualizar Registro</button>
+                <button type="submit" class="btn btn-primary ms-auto ajax-submit">Agregar registro</button>
             </div>
         </div>
     </div>

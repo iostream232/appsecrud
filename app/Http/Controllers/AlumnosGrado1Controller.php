@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AlumnosGrado1;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /**
  * Class AlumnosGrado1Controller
@@ -23,6 +24,24 @@ class AlumnosGrado1Controller extends Controller
         return view('alumnos-grado1.index', compact('alumnosGrado1s'))
             ->with('i', (request()->input('page', 1) - 1) * $alumnosGrado1s->perPage());
     }
+
+
+
+    /**
+
+     * Generate a PDF of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pdf()  
+    { 
+        $Alumnos = AlumnosGrado1::all();
+        $pdf = PDF::loadView('alumnos-grado1.reports', compact('Alumnos'));
+        return $pdf->stream('reporte-alumnos.pdf'); // Asigna un nombre al PDF.
+            
+    }
+    
+
 
     /**
      * Show the form for creating a new resource.
@@ -48,7 +67,7 @@ class AlumnosGrado1Controller extends Controller
         $alumnosGrado1 = AlumnosGrado1::create($request->all());
 
         return redirect()->route('alumnos-grado1s.index')
-            ->with('success', 'AlumnosGrado1 created successfully.');
+            ->with('success', 'Creado con éxito');
     }
 
     /**
@@ -91,7 +110,7 @@ class AlumnosGrado1Controller extends Controller
         $alumnosGrado1->update($request->all());
 
         return redirect()->route('alumnos-grado1s.index')
-            ->with('success', 'AlumnosGrado1 updated successfully');
+            ->with('success', 'Actualizado con éxito');
     }
 
     /**
@@ -104,6 +123,6 @@ class AlumnosGrado1Controller extends Controller
         $alumnosGrado1 = AlumnosGrado1::find($id)->delete();
 
         return redirect()->route('alumnos-grado1s.index')
-            ->with('success', 'AlumnosGrado1 deleted successfully');
+            ->with('success', 'Eliminado con éxito');
     }
 }

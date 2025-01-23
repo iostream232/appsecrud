@@ -110,24 +110,29 @@
                                                 <div class="dropdown">
                                                     <button class="btn dropdown-toggle align-text-top"
                                                             data-bs-toggle="dropdown">
-                                                       Acciones
+                                                       Opciones
                                                     </button>
                                                     <div class="dropdown-menu dropdown-menu-end">
                                                         <a class="dropdown-item"
                                                            href="{{ route('tipos-aprendizaje1s.show',$tiposAprendizaje1->id) }}">
                                                             Ver informacion
                                                         </a>
+
+                                                        <!--
+                                                        Para editar activar la opcion y mandar la variable en el 
+                                                        formulario edit.blade.php
                                                         <a class="dropdown-item"
                                                            href="{{ route('tipos-aprendizaje1s.edit',$tiposAprendizaje1->id) }}">
                                                             Editar
                                                         </a>
+                                                        -->
                                                         <form
                                                             action="{{ route('tipos-aprendizaje1s.destroy',$tiposAprendizaje1->id) }}"
                                                             method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="submit"
-                                                                    onclick="if(!confirm('Do you Want to Proceed?')){return false;}"
+                                                                    onclick="if(!confirm('¿Quieres eliminar el registro?')){return false;}"
                                                                     class="dropdown-item text-red"><i
                                                                     class="fa fa-fw fa-trash"></i>
                                                                 Eliminar
@@ -151,7 +156,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>              
     </div>
 @endsection
 <script>

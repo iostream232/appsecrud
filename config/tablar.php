@@ -42,7 +42,7 @@ return [
     'auth_logo' => [
         'enabled' => false,
         'img' => [
-            'path' => 'assets/secu_logo.jpg',
+            'path' => 'assets/logosep.png',
             'alt' => 'Auth Logo',
             'class' => '',
             'width' => 50,
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'layout' => 'Vertical',
+    'layout' => 'navbar-overlap',
     //boxed, combo, condensed, fluid, fluid-vertical, horizontal, navbar-overlap, navbar-sticky, rtl, vertical, vertical-right, vertical-transparent
 
     'layout_light_sidebar' => false,
@@ -129,8 +129,8 @@ return [
     'register_url' => 'register',
     'password_reset_url' => 'password.request',
     'password_email_url' => 'password.email',
-    'profile_url' => false,
-    'setting_url' => false,
+    //'profile_url' => false,
+   // 'setting_url' => false,
 
     /*
     |--------------------------------------------------------------------------
