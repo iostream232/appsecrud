@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AlumnosGrado3;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /**
  * Class AlumnosGrado3Controller
@@ -50,6 +51,15 @@ class AlumnosGrado3Controller extends Controller
         return redirect()->route('alumnos-grado3s.index')
             ->with('success', 'AlumnosGrado3 created successfully.');
     }
+
+    public function pdf()  
+    { 
+        $Alumnos = AlumnosGrado3::all();
+        $pdf = PDF::loadView('alumnos-grado3.reports', compact('Alumnos'));
+        return $pdf->stream('reporte-alumnos.pdf'); // Asigna un nombre al PDF.
+            
+    }
+    
 
     /**
      * Display the specified resource.

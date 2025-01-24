@@ -8,6 +8,8 @@ Route::get('/', function () {
 });
 Auth::routes();
 Route::get('/alumnos-grado1s/pdf', [\App\Http\Controllers\AlumnosGrado1Controller::class,'pdf'])->name('Reportes1.pdf');
+Route::get('/alumnos-grado2s/pdf', [\App\Http\Controllers\AlumnosGrado2Controller::class,'pdf'])->name('Reportes2.pdf');
+Route::get('/alumnos-grado3s/pdf', [\App\Http\Controllers\AlumnosGrado3Controller::class,'pdf'])->name('Reportes3.pdf');
 Route::get('/home', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/alumnos-grado1s', App\Http\Controllers\AlumnosGrado1Controller::class);

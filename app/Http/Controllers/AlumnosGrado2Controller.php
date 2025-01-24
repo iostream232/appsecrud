@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AlumnosGrado2;
 use Illuminate\Http\Request;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 /**
  * Class AlumnosGrado2Controller
  * @package App\Http\Controllers
@@ -24,6 +24,16 @@ class AlumnosGrado2Controller extends Controller
             ->with('i', (request()->input('page', 1) - 1) * $alumnosGrado2s->perPage());
     }
 
+
+
+    public function pdf()  
+    { 
+        $Alumnos = AlumnosGrado2::all();
+        $pdf = PDF::loadView('alumnos-grado2.reports', compact('Alumnos'));
+        return $pdf->stream('reporte-alumnos.pdf'); // Asigna un nombre al PDF.
+            
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
