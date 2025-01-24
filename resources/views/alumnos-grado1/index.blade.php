@@ -14,9 +14,7 @@
                     <div class="page-pretitle">
                         Alumnos de primer grado
                     </div>
-                    <h2 class="page-title">
-                        {{ __('1° A             Mtra: Gloria ') }}
-                    </h2>
+                    
                 </div>
                 <!-- Page title actions -->
                 <div class="col-12 col-md-auto ms-auto d-print-none">
