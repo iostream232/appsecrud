@@ -217,7 +217,7 @@
                         <a href="{{ url('/home') }}" class="text-white text-decoration-none me-3">Inicio</a>
                     @else
                         <a href="{{ route('login') }}" class="text-white text-decoration-none me-3">Iniciar sesion</a>
-                        `
+                        
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="text-white text-decoration-none">Registrarse</a>
                         @endif
