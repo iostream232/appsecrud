@@ -9,11 +9,10 @@ export default defineConfig({
         }),
     ],
     server: {
-        hmr: {
-            host: 'localhost',
-            protocol: 'ws',
-            port: 3000
+        server: {
+            hmr: false,  // Desactivar HMR para producción
         }
+        
     },
     build: {
         commonjsOptions: {
