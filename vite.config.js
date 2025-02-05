@@ -5,12 +5,15 @@ export default defineConfig({
     plugins: [
         laravel({
             input: ['resources/js/app.js'],
+
+            
             refresh: true,
         }),
     ],
     server: {
         server: {
-            hmr: false,  // Desactivar HMR para producción
+            hmr: false,  
+            https: true,
         }
         
     },
