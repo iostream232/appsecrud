@@ -60,10 +60,13 @@
                 </form>
             </div>    
         </div>
+        
         @if(Route::has('register'))
+        <!--
             <div class="text-center text-muted mt-3">
                 No tienes una cuenta? <a href="{{route('register')}}" tabindex="-1">Registrate</a>
             </div>
+            -->
         @endif
     </div>
 @endsection
